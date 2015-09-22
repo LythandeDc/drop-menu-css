@@ -1,0 +1,75 @@
+<!Doctype html>
+
+<html>
+
+	<head>
+	<meta charset="utf-8" />
+	<title>Menu déroulant</title>
+		
+		<style>
+			
+			#menu ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				text-align: center;
+			}
+			#menu li{
+				float: left;
+				margin: auto;
+				padding: 0;
+				background-color: #EA4335;
+			}
+			#menu li a{
+				display: block;
+				width: 200px;
+				color: white;
+				text-decoration: none;
+				padding: 10px;
+			}
+			#menu li a:hover{
+				color: yellow;
+			}
+			
+			#menu ul li ul{
+				display: none;
+			}
+			
+			#menu ul li:hover ul{
+				display: block;
+			}
+			
+			#menu ul li:hover ul li{
+				float: none;
+			}
+			
+			#menu li ul{
+				position: absolute;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		<div id="menu">
+			
+			<ul>
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Item 2</a>
+					<!-- Sous menu -->
+					<ul>
+						<li><a href="#">Sous-menu</a></li>
+						<li><a href="#">Sous-menu 2</a></li>
+						<li><a href="#">Sous-menu 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Item 3</a></li>
+			</ul>
+			
+		</div>
+	
+	</body>
+	
+</html>
