@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mega Menu CSS</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #fafafa;
+		}
+
+		nav {
+			background-color: #2d3436;
+			position: relative;
+		}
+
+		nav > ul {
+			list-style: none;
+			display: flex;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		nav > ul > li {
+			position: static;
+		}
+
+		nav > ul > li > a {
+			display: block;
+			padding: 18px 28px;
+			color: #dfe6e9;
+			text-decoration: none;
+			font-weight: 600;
+			font-size: 0.95rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: color 0.3s, background-color 0.3s;
+		}
+
+		nav > ul > li > a:hover,
+		nav > ul > li > a:focus {
+			color: #fff;
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+
+		/* Mega menu panel */
+		.mega-panel {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background: #fff;
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+			border-top: 3px solid #0984e3;
+			padding: 30px 0;
+		}
+
+		nav > ul > li:hover > .mega-panel,
+		nav > ul > li:focus-within > .mega-panel {
+			display: block;
+		}
+
+		.mega-panel-inner {
+			display: flex;
+			max-width: 1200px;
+			margin: 0 auto;
+			gap: 40px;
+			padding: 0 28px;
+		}
+
+		.mega-column {
+			flex: 1;
+		}
+
+		.mega-column h3 {
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			color: #0984e3;
+			margin-bottom: 16px;
+			padding-bottom: 8px;
+			border-bottom: 2px solid #dfe6e9;
+		}
+
+		.mega-column ul {
+			list-style: none;
+		}
+
+		.mega-column a {
+			display: block;
+			padding: 8px 0;
+			color: #636e72;
+			text-decoration: none;
+			font-size: 0.95rem;
+			transition: color 0.2s, padding-left 0.2s;
+		}
+
+		.mega-column a:hover,
+		.mega-column a:focus {
+			color: #0984e3;
+			padding-left: 8px;
+		}
+
+		/* Simple dropdown for items without mega panel */
+		nav > ul > li > ul:not(.mega-panel) {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 180px;
+			list-style: none;
+			flex-direction: column;
+			background: #fff;
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+			border-top: 3px solid #0984e3;
+		}
+
+		nav > ul > li:hover > ul:not(.mega-panel),
+		nav > ul > li:focus-within > ul:not(.mega-panel) {
+			display: flex;
+		}
+
+		nav > ul > li > ul:not(.mega-panel) a {
+			display: block;
+			padding: 12px 20px;
+			color: #636e72;
+			text-decoration: none;
+			transition: background-color 0.2s, color 0.2s;
+		}
+
+		nav > ul > li > ul:not(.mega-panel) a:hover {
+			background-color: #f0f7ff;
+			color: #0984e3;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav aria-label="Main menu">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li>
+				<a href="#">Products</a>
+				<div class="mega-panel">
+					<div class="mega-panel-inner">
+						<div class="mega-column">
+							<h3>Software</h3>
+							<ul>
+								<li><a href="#">Web Applications</a></li>
+								<li><a href="#">Mobile Apps</a></li>
+								<li><a href="#">Desktop Tools</a></li>
+								<li><a href="#">API Services</a></li>
+							</ul>
+						</div>
+						<div class="mega-column">
+							<h3>Hardware</h3>
+							<ul>
+								<li><a href="#">Servers</a></li>
+								<li><a href="#">Workstations</a></li>
+								<li><a href="#">Networking</a></li>
+								<li><a href="#">Storage</a></li>
+							</ul>
+						</div>
+						<div class="mega-column">
+							<h3>Cloud</h3>
+							<ul>
+								<li><a href="#">Hosting</a></li>
+								<li><a href="#">CDN</a></li>
+								<li><a href="#">Databases</a></li>
+								<li><a href="#">Monitoring</a></li>
+							</ul>
+						</div>
+						<div class="mega-column">
+							<h3>Support</h3>
+							<ul>
+								<li><a href="#">Documentation</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Training</a></li>
+								<li><a href="#">Consulting</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a href="#">Company</a>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Blog</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Pricing</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+
+</body>
+
+</html>

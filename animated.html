@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animated Dropdown Menu</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #f0f0f0;
+		}
+
+		nav {
+			background: linear-gradient(135deg, #667eea, #764ba2);
+			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+		}
+
+		nav li {
+			position: relative;
+		}
+
+		nav a {
+			display: block;
+			padding: 16px 28px;
+			color: rgba(255, 255, 255, 0.9);
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.95rem;
+			transition: background-color 0.3s;
+		}
+
+		nav a:hover,
+		nav a:focus {
+			background-color: rgba(255, 255, 255, 0.15);
+			color: #fff;
+		}
+
+		/* Sub-menu with slide-down animation */
+		nav li ul {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			min-width: 220px;
+			flex-direction: column;
+			background: #fff;
+			border-radius: 0 0 8px 8px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+			opacity: 0;
+			transform: translateY(-10px);
+			visibility: hidden;
+			transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+			display: flex;
+		}
+
+		nav li ul a {
+			color: #333;
+			padding: 12px 24px;
+			font-weight: 400;
+			position: relative;
+			overflow: hidden;
+		}
+
+		nav li ul a::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 3px;
+			height: 100%;
+			background: linear-gradient(135deg, #667eea, #764ba2);
+			transform: scaleY(0);
+			transition: transform 0.25s;
+		}
+
+		nav li ul a:hover::before,
+		nav li ul a:focus::before {
+			transform: scaleY(1);
+		}
+
+		nav li ul a:hover,
+		nav li ul a:focus {
+			background-color: #f8f8ff;
+			color: #764ba2;
+		}
+
+		nav li:hover > ul,
+		nav li:focus-within > ul {
+			opacity: 1;
+			transform: translateY(0);
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav aria-label="Main menu">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li>
+				<a href="#">Products</a>
+				<ul>
+					<li><a href="#">Electronics</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Books</a></li>
+					<li><a href="#">Sports</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Solutions</a>
+				<ul>
+					<li><a href="#">Enterprise</a></li>
+					<li><a href="#">Startup</a></li>
+					<li><a href="#">Education</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Pricing</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+
+</body>
+
+</html>
